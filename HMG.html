@@ -1,0 +1,439 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>SHUBHRA &mdash; </title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!--
+	//////////////////////////////////////////////////////
+
+
+	Email: 			shubhrasanjaygupta@gmail.com
+	Twitter: 		http://twitter.com/fh5co
+	Facebook: 		https://www.facebook.com/fh5co
+
+	//////////////////////////////////////////////////////
+	 -->
+
+  	<!-- Facebook integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+
+	<!-- <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,800" rel="stylesheet">	 -->
+	<link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
+
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="css/icomoon.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="css/magnific-popup.css">
+
+	<!-- Flexslider  -->
+	<link rel="stylesheet" href="css/flexslider.css">
+
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="css/style.css">
+
+	<!-- Modernizr JS -->
+	<script src="js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+
+	</head>
+	<body>
+
+	<div class="fh5co-loader"></div>
+
+	<div id="page">
+	<nav class="fh5co-nav" role="navigation">
+		<div class="top-menu">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-xs-2">
+						<div id="fh5co-logo"><a href="index.html">SHUBHRA<span>.</span></a></div>
+					</div>
+					<div class="col-xs-10 text-right menu-1">
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="work.html">Work</a></li>
+							<li><a href="blog.html">Blog</a></li>
+							<li><a href="about.html">About</a></li>
+							<!-- <li class="btn-cta"><a href="#"><span>Sign Up</span></a></li> -->
+						</ul>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</nav>
+
+	<aside id="fh5co-hero" class="js-fullheight">
+		<div class="flexslider js-fullheight">
+			<ul class="slides">
+		   	<li class="holder" style="background-image: url(images/hmg.jpg);">
+		   		<div class="overlay-gradient"></div>
+		   		<div class="container">
+		   			<div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
+		   				<div class="slider-text-inner desc">
+		   					<h2 class="heading-section">HEALTH MONITORING GLOVE</h2>
+
+		   				</div>
+		   			</div>
+		   		</div>
+		   	</li>
+		  	</ul>
+	  	</div>
+	</aside>
+
+	<body><div style="margin:25px;">
+	<p>In this project we will be using Lilypad arduino to check the pulse of a person.We will also be using pulse sensors,7segment display module and battery.</p>
+	<h2>CONNECTING AND DETECTING LILYPAD ARDUINO</h2>
+	We need Lilypad Arduino,female pin connector,FTDI connector,USB Cable<br>
+</br>In lilpad arduino:first two pins are GND, 3rd pin is for VCC, 4th pin is for RX(receiver), 5th pin is for TX(transmitter), 6th pin is VTR.<br>
+</br>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: left;
+}
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: left;
+}
+</style>
+</head>
+<body>
+
+		<p>Connections of lilpad arduino and FTDi connector:</p>
+
+<table style="width:100%">
+  <tr>
+    <th>FTDI CONNECTOR</th>
+    <th>LILYPAD ARDUINO0</th>
+  </tr>
+  <tr>
+    <td>GND</td>
+    <td>GND(2ndpin)</td>
+	</tr>
+	<tr>
+    <td>VCC pin</td>
+		<td>VCC pin</td>
+  </tr>
+	<tr>
+		<td>TX pin (i.e. transmitter pin)</td>
+			<td>RX pin</td>
+		</tr>
+		<tr>
+			<td>RX pin (i.e. receiver pin)</td>
+				<td>TX pin</td>
+			</tr>
+			<tr>
+				<td>DTR pin</td>
+				<td>VTR pin</td>
+			</tr>
+</table><br>
+</br>For power connect mini USB pin to FTDI and other pin to laptop.Led on arduino starts blinking and led on FTDI glows.So u are done with the interfacing of both.<br>
+<h2>SCHEMATIC</h2>
+	Pulse sensor: Identifies the pulse and measure the heart rate.<br>
+</br>Lilypad arduino:Reads the data from pulse sensor at regular intervals and send data to display module.<br>
+</br>TM1637 Display module:; Displays the heart beat rate.<br>
+</br>
+
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: left;
+}
+</style>
+</head>
+<body>
+
+		<p>Connections of lilpad arduino and FTDi connector:</p>
+
+<table style="width:100%">
+  <tr>
+    <th>Component 1</th>
+    <th>Pin</th>
+		<th>Pin description</th>
+		<th>Pin</th>
+		<th>Pin Description</th>
+		<th>Component 2</th>
+  </tr>
+  <tr>
+    <td>Pulse sensor</td>
+    <td>+</td>
+		<td>5V positive</td>
+		<td>+</td>
+		<td>5V positive</td>
+		<td>Lilypad arduino</td>
+	</tr>
+	<tr>
+    <td></td>
+		<td>-</td>
+		<td>Ground</td>
+		<td>-</td>
+		<td>Ground</td>
+		<td></td>
+		</tr>
+	<tr>
+		<td></td>
+			<td>S</td>
+			<td>Signal Pin</td>
+			<td>A0</td>
+			<td>Analog pin</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>TM 1637 Display module</td>
+				<td>VCC</td>
+				<td>5V positive</td>
+				<td>+</td>
+				<td>5V positive</td>
+				<td>Lilypad Arduino</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>GND</td>
+				<td>Ground</td>
+				<td>-</td>
+				<td>Ground</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>DIO</td>
+				<td>Data I/O</td>
+				<td>9</td>
+				<td>Digital pin</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>CLK</td>
+				<td>Clock</td>
+				<td>10</td>
+				<td>Digital pin</td>
+        <td></td>
+			</tr>
+</table>
+ </body>
+<h3>ARDUINO LIBRARY INSTALLATION</h3>
+Download 2 header files for pulse sensor and TM1637 Display.Unzip it using WinRaR.Copy these 2 files and paste ithem in library of Arduino.<br>
+</br>For library Go to My computers->Local drive C->Program filesx86->Arduino->library(paste).<br>
+</br>If still the files doesn't show in the folder reopen the folder,it will refresh it and you will be able to see the files you copied.<br>
+</br><b>DESIGNING ARDUINO SKETCH TO READ THE DATA FROM PULSE SENSOR</b><br>
+<code>
+</br>#define USE_ARDUINO_INTERRUPTS true<br>
+</br>#include <PulseSensorPlayground.h><br>
+</br>PulseSensorPlayground pulseSensor;<br>
+</br>const int Pulse = A0;<br>
+</br>const int Led = 13;<br>
+</br>int Threshold = 350;<br>
+
+</br>void setup(){<br>
+</br>Serial.begin(9600);<br>
+</br>pulseSensor.analogInput(Pulse);<br>
+</br>pulseSensor.blinkOnPulse(Led);<br>
+</br>pulseSensor.setThreshold(Threshold);<br>
+</br>if(pulseSensor.begin())<br>
+</br>{Serial.print("Pulse Sensor is ready to measure your Heart beat...!");<br>
+ }
+}
+
+</br>void loop()
+{<br>
+</br>int myBPM = pulseSensor.getBeatsPerMinute();<br>
+  ,/br>if(pulseSensor.sawStartOfBeat());<br>
+</br>{
+    Serial.print("A Heart Beat Happened!");<br>
+	</br>Serial.print("BPM:");<br>
+</br>Serial.print(myBPM);
+}<br>
+</br>delay(1000);
+}<br></code>
+</br>Save the file.click verify and then upload it to lilypad.Make sure you have changed your ports and board in the tools as FTDI will be assigned a different port.<br>
+</br>For checking the port assigned.Connect arduino board to laptop using FTDI connector.LED on board starts glowing.Go to device manager-->expand the ports column-->you can now look at the port assigned to the connector.In case it shows warning sign--right click on it and click on update driver software-->browse on my computer.Refresh device manager u can now see the warning siggn has gone. <br>
+</br><h2>INTERFACING PULSE SENSOR TO ARDUINO</h2>
+As connections are already mentioned in the table above.We will connect + pin of lilypad to VCC of pulse sensor(middlepin).-pin of lilpad to GND of pulse sensor(right most).a0 pin to signal pin of sensor(left most).
+<br>
+</br>Connect the USB to laptop.Led starts glowing of arduino board as well as pulse sensor.OPen the program u have written in Arduino RDE.Go to Tools-->Serial monitor.<br>
+</br>Put your finger on pulse sensor.You will observe the readings on serial monitor.<br>
+</br><b>DESIGN SKETCH FOR TM1637 DISPLAY MODULE</b><br>
+<code>
+</br>	#include <SevenSegmentTM1637.h><br>
+</br>const byte CLK = 10;<br>
+</br>const byte DIO = 9;<br>
+</br>int i;<br>
+</br>SevenSegmentTM1637 display(CLK,DIO);<br>
+
+void setup()<br>
+</br>{
+ Serial.begin(9600);<br>
+ </br>display.begin();<br>
+ </br>display.setBacklight(100);
+}<br>
+
+</br>void loop()<br>
+</br>{
+ Serial.print("Good");<br>
+ </br>display.print("Good");<br>
+ </br>delay(1000);<br>
+ </br>display.clear();<br>
+ </br>for(i=0;i<=20;i++);<br>
+ </br>{
+	 Serial.print(i);<br>
+	</br> display.print(i);<br>
+	</br> delay(200);<br>
+ }</br>
+display.print("DONE"); <br>
+</br>Serial.print("DONE");<br>
+</br>delay(1000);<br>
+</br>display.clear();<br>
+</br>delay(1000);<br>
+</br>}</code>
+<br>Save the file.Verify and compile and upload it to lilypad.Do check the board and port opted in tools.</br>
+<h2>INTERFACING AND TESTING TM1637 DISPLAY MODULE</h2>
+Connections are already stated above in the table.Connect GND of TM1637 to +pin of lilypad.VCC to -ve pin. DIO pin to digital pin 9 of Lilypad. CLK to digital pin 10 of Lilypad.<br>
+</br>Connect USB to laptop.Open the file created of TM1637 display module.Led of arduino will glow and display module will show the msg.It means the connections are done properly.<br>
+</br><h3>FABRICATION SCHEMATIC</h3>
+<br>1.Sew the lilypad on the back side of glove.</br>
+<br>2.Sew the pulse sensor on the index finger of palm side of glove.Please ensure that the sensing side is facing outwards.</br>
+<br>3.Sew the TM1637 DisplayModule on thumb of the back side of glove.</br>
+<b>Note: Sewing must be done by non-conductive thread.Also sew the battery holder at the bottom of glove on back side.</b>
+<br>Using the conductive thread the connections are done as shown.Refer the table above for connections.</br>
+<b>Make sure no 2 threads touch each other while doing the connections, otherwise it may short and glove will catch the spark.</b>
+<h2>FINAL PROGRAM</h2>
+<code>
+	#define USE_ARDUINO_INTERRUPTS true<br>
+</br>#include <PulseSensorPlayground.h><br>
+</br>#include <SevenSegmentTM1637.h><br>
+</br>PulseSensorPlayground pulseSensor;<br>
+
+</br>const byte CLK = 10;<br>
+</br>const byte DIO = 9;<br>
+</br>int i;<br>
+</br>SevenSegmentTM1637 display(CLK,DIO);<br>
+
+</br>const int Pulse = A0;<br>
+</br>const int Led = 13;<br>
+</br>int Threshold = 350;<br>
+
+</br>void setup()<br>
+</br>{
+Serial.begin(9600);<br>
+</br>display.begin();<br>
+</br>display.print("H bt");<br>
+</br>delay(1000);<br>
+</br>pulseSensor.analogInput(Pulse);<br>
+</br>pulseSensor.blinkOnPulse(Led);<br>
+</br>pulseSensor.setThreshold(Threshold);<br>
+</br>if(pulseSensor.begin())<br>
+</br>{
+  Serial.print("Pulse Sensor is ready to measure your Heart beat...!");<br>
+</br>}
+}<br>
+
+</br>void loop()<br>
+</br>{
+  int myBPM = pulseSensor.getBeatsPerMinute();<br>
+</br>if(pulseSensor.sawStartOfBeat());<br>
+</br>{
+    Serial.print("A Heart Beat Happened!");<br>
+	</br>Serial.println("BPM:");<br>
+	</br>Serial.println(myBPM);<br>
+	</br>display.print(myBPM);<br>
+	</br>delay(1000);<br>
+	</br>display.clear();
+  }<br>
+</br>delay(1000);<br>
+}</br>
+<br>Save.VERify,compile and upload it to lilypad arduino.Do check the board and port in tools.OPEN the serial monitor.Put your finger on pulse sensor, display module will show your heart beat and serial monitor will also show the same.</br>
+
+	</div>
+	    </div>
+    </div>
+</div>
+	<div id="fh5co-started" style="background-image:url(images/img_bg_2.jpg);">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row animate-box">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+					<h2>Want To Write About The Site!</h2>
+					<p>Share your views and ideas to help me improve the site.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<footer id="fh5co-footer" role="contentinfo">
+		<div class="container">
+			<div class="row row-pb-md">
+				<div class="col-md-4 fh5co-widget">
+					<h4>Links</h4>
+					<ul class="fh5co-footer-links">
+						<li><a href="work.html">Work</a></li>
+						<li><a href="about.html">About us</a></li>
+					</ul>
+				</div>
+
+				<div class="col-md-4 col-md-push-1">
+					<h4>Contact Information</h4>
+					<ul class="fh5co-footer-links">
+						<li><a href="mailto:shubhrasanjaygupta@gmail.com">shubhrasanjaygupta@gmail.com</a></li>
+					</ul>
+				</div>
+
+			</div>
+
+	</footer>
+	</div>
+
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+	</div>
+
+	<!-- jQuery -->
+	<script src="js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="js/jquery.waypoints.min.js"></script>
+	<!-- Flexslider -->
+	<script src="js/jquery.flexslider-min.js"></script>
+	<!-- Magnific Popup -->
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script src="js/magnific-popup-options.js"></script>
+	<!-- Main -->
+	<script src="js/main.js"></script>
+
+	</body>
+</html>

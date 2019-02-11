@@ -1,0 +1,394 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>SHUBHRA &mdash; </title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!--
+	//////////////////////////////////////////////////////
+
+
+	Email: 			shubhrasanjaygupta@gmail.com
+	Twitter: 		http://twitter.com/fh5co
+	Facebook: 		https://www.facebook.com/fh5co
+
+	//////////////////////////////////////////////////////
+	 -->
+
+  	<!-- Facebook integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+
+	<!-- <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,800" rel="stylesheet">	 -->
+	<link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
+
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="css/icomoon.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="css/magnific-popup.css">
+
+	<!-- Flexslider  -->
+	<link rel="stylesheet" href="css/flexslider.css">
+
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="css/style.css">
+
+	<!-- Modernizr JS -->
+	<script src="js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+
+	</head>
+	<body>
+
+	<div class="fh5co-loader"></div>
+
+	<div id="page">
+	<nav class="fh5co-nav" role="navigation">
+		<div class="top-menu">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-xs-2">
+						<div id="fh5co-logo"><a href="index.html">SHUBHRA<span>.</span></a></div>
+					</div>
+					<div class="col-xs-10 text-right menu-1">
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="work.html">Work</a></li>
+							<li><a href="blog.html">Blog</a></li>
+							<li><a href="about.html">About</a></li>
+							<!-- <li class="btn-cta"><a href="#"><span>Sign Up</span></a></li> -->
+						</ul>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</nav>
+
+	<aside id="fh5co-hero" class="js-fullheight">
+		<div class="flexslider js-fullheight">
+			<ul class="slides">
+		   	<li class="holder" style="background-image: url(images/gps.jpg);">
+		   		<div class="overlay-gradient"></div>
+		   		<div class="container">
+		   			<div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
+		   				<div class="slider-text-inner desc">
+		   					<h2 class="heading-section">GPS AND GSM TRACKER</h2>
+
+							</div>
+						</div>
+						</div>
+						</li>
+						</ul>
+						</div>
+						</aside>
+
+								<body>
+								<div style="margin:25px;">
+								<h2><b>SCHEMATIC:</b></h2>
+								So what we will be needing for vehicle tracking system is as follows:<br>
+							</br>1.GPS Receiver module with an antenna to receive GPS data and then send the GPS data to an arduino board.<br>
+						</br>2. Arduino must be programmed such that it converts the GPS data into understandable latitude and longitude values.<br>
+					</br>3. GSM module must pick this data from arduino board and sent it to your phone via msgbr>
+				</br>4. Finally, the data received in your phone must be used to plot or trace the route of the vehicle that you are tracking.<br>
+
+			</br><h2>INTERFACING ARDUINO UNO:</h2>
+			Install arduino software by using www.arduino.cc<br>
+		</br>Connect arduino board to laptop using USB-URT cable.LED on board starts glowing.Go to device manager-->expand the ports column-->you can now look at the port assigned to arduino board.In case it shows warning sign--right click on it and click on update driver software-->browse on my computer.Refresh device manager u can now see the warning sign has gone. <br>
+	</br>Your set up is complete now.Open the software now you will see different options under FILE,TOOLs,etc..<br>
+</br> Under Tools click on Boards-->Arduino UNO, Ports-->Port assigned(in my case it was PORT8).In arduino software programs written are called sketches.<br>
+<h3>ARDUINO PROGRAM:</h3>
+	In #include we include the library which we wanna use.Every sketch needs 2 void type function.<br>
+</br>1. set up() :runs only for one time.We initialise system here.<br>
+</br>2. loop() :runs for infinite time.All our logic resides here.<br>
+</br>On board LED is assigned pin 13.<br>
+</br><b>PROGRAM FOR LED TO ALWAYS REMAIN OFF:</b><br>
+</br><code>
+	Int ledPin = 13;<br>
+</br>void set up()<br>
+</br>{<br>
+</br>PinMode(ledPin,OUTPUT);<br>
+</br>}<br>
+</br>void loop()<br>
+</br>{<br>
+</br>digitalWrite(ledPin,LOW);  //we state 2 variables in this mode.The level which can be HIGH on state and LOW offstate.<br>
+</br>}<br>
+</code>
+<p>Next we will save the file by clicking on Save As and then click on compile.It will check for errors in the program written..Click on tool to check the board and port used,it must be the same we used earlier.Finally,Upload the code to arduino by connecting the board using the /USB-URT cable.</p><br>
+</br>You can also write another program for blinking LED.<br>
+</br><b>PROGRAM FOR BLINKING LED</b><br>
+</br><code>
+	Int ledPin = 13;<br>
+</br>void set up()<br>
+</br>{<br>
+</br>PinMode(ledPin,OUTPUT);<br>
+</br>}<br>
+</br>void loop()<br>
+</br>{<br>
+</br>digitalWrite(ledPin,HIGH);  //we state 2 variables in this mode.The level which can be HIGH on state and LOW offstate.<br>
+</br>delay(1000);  //giving a delay of 1000milli seconds.<br>
+</br>digitalWrite(ledPin,LOW);<br>
+</br>delay(1000);<br>
+</br>}<br>
+</code>
+<p>Save the file.Compile And upload it to Arduino UNO board.</p>
+
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: left;
+}
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: left;
+}
+</style>
+</head>
+<body>
+
+	<h2>INTERFACING GPS MODULE TO ARDUINO</h2>
+	<p>Connections of GPS module with Arduino UNO board are as follows:</p>
+
+<table style="width:100%">
+  <tr>
+    <th>GPS MODULE</th>
+    <th>ARDUINO UNO</th>
+  </tr>
+  <tr>
+    <td>GND</td>
+    <td>GND</td>
+	</tr>
+	<tr>
+    <td>5V pin</td>
+		<td>5V pin</td>
+  </tr>
+	<tr>
+		<td>TX pin (i.e. transmitter pin)</td>
+			<td>TX pin</td>
+		</tr>
+		<tr>
+			<td>RX pin (i.e. receiver pin)</td>
+				<td>RX pin</td>
+			</tr>
+</table><br>
+</br>Connect Reset and GND of Arduino UNO with each other.When we ground the reset pin the Arduino works as dumb USB serial connrctor.<br>
+</br>This is done to use Arduino UNO just as a communication device between the laptop and GPS receiver module.<br>
+</br>Connect the antenna of GPS module and tighten the screw.<br>
+</br><b>Antenna should be kept closer to the room exterior as possible to establish proper lock with the GPS satellite.</b><br>
+</br>So the interfacing has finished now.<br>
+</br>Connect the USB-URT cable to laptop and arduino.You will observe that LED starts glowing.<br>
+</br>To read the data--Open the arduino software with a blank sketch.Go to Tools-->Boards-->ARDUINO Uno.Tools-->PORT-->COM8(whatever is assigned in ur laptop).Tools-->Serial monitor<br>
+</br>You will observe a similar data.this data is called synamio data.The data will have sentences which will begin with '$'sign called sentence identifier.It will have following set of data:<br>
+</br>GPGGA, GPGSA, GPGSV, GLGSV.Our focus in this project will be on <b>GPGGA</b>.Each value has its specific meaning:<br>
+</br>1st value-TIME in UTS format-HHMMSS.ms<br>
+</br>2nd and 3rd value-LATITUDE in degree and minutes(DMS format) and direction N OR S respectively.<br>
+</br>4th and 5th value-LONGITUDE in degree and minutes(DMS format) and direction E OR W respectively.<br>
+</br>6th value-GPS Quality Indicator:0-no fix, 1-GPS fix.<br>
+</br>7th value-number of satellites in use.<b>NOTE:For locating a point we need 4satellites to lock with the GPS Module</b><br>
+</br>We need these 7values only for our project.<br>
+</br>Google maps take values of latitude and longitude in decimal degrees.<br>
+
+
+</br>We can now use these values in google map application to locate the points of GPS module.For this open Google map in your browser and first input LATITUDE and then LONGITUDE.<br>
+</br>+ve for N,-ve for S,+ve for E,-ve for W.You can now successfully read the location.yayyy!!!<br>
+</br>
+
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: left;
+}
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: left;
+}
+</style>
+</head>
+<body>
+
+	<h2>INTERFACING GMS MODULE TO ARDUINO</h2>
+	<p>Insert the SIM card in the module(at the back of module you will observe a slot provided for sim).<br>
+	</br> Connections of GMS module with Arduino UNO board are as follows:</p>
+
+<table style="width:100%">
+  <tr>
+    <th>GMS MODULE</th>
+    <th>ARDUINO UNO</th>
+  </tr>
+  <tr>
+    <td>GND</td>
+    <td>GND(present before pin 13)</td>
+	</tr>
+		<tr>
+		<td>TX pin (i.e. transmitter pin)</td>
+			<td>Digital pin 0(RX)</td>
+		</tr>
+		<tr>
+			<td>RX pin (i.e. receiver pin)</td>
+				<td>Digital pin 1(TX)</td>
+			</tr>
+</table>
+</body>
+<br>
+</br>Power them both.Power GSM module using 12V adaptor.You will see power LED and Ring LED glows on GSM module.Long press the power button to establish 'network connections'.Once you release it NETWORK LED starts blinking rapidly.As soon as SIM card establishes network connectivity with mobile network, LED starts blinking at lower frequency<br.
+</br>You can now try to call the GSM module.You can hear the ringing tone on ur phone and will observe RING Led starts glowing.Now you have a working mobile device.<br>
+
+</br><h2>TESTING THE GSM MODULE</h2>
+<p> Write the given program in the arduino software already installed</p><br>
+</br>
+<code>String SMS1 = "This is a text SMS from your GSM";<br>
+</br>String SMS2 = "Great! It Works!!";<br>
+</br>void set up()<br>
+</br>{<br>
+</br>Serial.begin(9600);  //setting the baud rate of Serial monitor<br>
+</br>delay(100);<br>
+</br>SendMessage(SMS1);  //Call the Send Message function with SMS1 string as parameter<br>
+</br>delay(5000);<br>
+</br>SendMessage(SMS2);<br>
+</br>}<br>
+</br>void SendMessage(StringSMS)  //function to send SMS-Take the SMS as a string input<br>
+</br>{<br>
+</br>Serial.print("AT+CMGF = 1");   //Sets the GSM module in SIM mode<br>
+</br>delay(1000);<br>
+</br>Serial.println("AT+CMGS= \"+9179851xxxxx\"\r");    // used to send SMS to particular no.(Write country code before writing no.)<br>
+</br>delay(1000);<br>
+</br>Serial.println(SMS);    //print the sms in new line.<br>
+</br>delay(100);<br>
+</br>Serial.println((char)26);     //denotes end of message and sends the message.<br>
+</br>delay(1000);<br>
+</br>}</code><br>
+</br> Now save the file and compile the program.Upload the program to Arduino UNO by connecting the cable to laptop and arduino board.<br>
+
+<h2>SETTING UP THE IFTTT APP:</h2>
+We will be using this app to update the google sheets whenever we receive SMS from no.<br>
+</br>Go to MY APPLET-->(+)-->if this then this-->search for SMS-->Click on Android SMS-->Trigger-->New SMS received from a particular phone no.-->Enter the no.<br>
+</br>Now for google sheets:Search for google sheets-->connect-->allow to access google drive and sheets.Chamge the row format, spreadsheet name-Vehicle tracking system, drive folder path-->Create action-->Finish-->allow access<br>
+</br><h2>FINAL CONNECTIONS AND PROGRAM:</h2>
+<br>Take a wooden chassis fix all the components as shown.Interface GSM first.Do all the connections as already stated above in the table.</br>
+<br>You can edit the program we wrote for sending SMS or can create another sketch.Final program is as follows:</br>
+<br><code>
+	      #include<SoftwareSerial.h>    //library for the software of serial monitor</br>
+		<br>#include<TinyGPS.h>    //library to access GPS device(if u dont have this in ur arduino library get it from git and save it in the library of arduino.Folder of arduino will be in ur program files.)</br>
+		<br>SoftwareSerial gpsSerial(3,4);</br>
+		<br>TinyGPS gps;</br>
+		<br>long lat,lon;</br>
+		<br>void set up()</br>
+		<br>{</br>
+			<br>gps Serial.begin(9600);</br>
+			<br>Serial.begin(9600);</br>
+			<br>delay(1000);</br>
+		<br>Serial.print("Initializing Please Wait...");
+    <br>}</br>
+		<br>void loop()</br>
+		<br>{</br>
+<br>if(gpsSerial.available());   //Check for availabiling of GPS data</br>
+<br>{if(gps.encode(gpsSerial.read()));    //Encode the gps data and read by gps serial</br>
+<br>{gps.get_position(&lat,&lon);</br>
+	<br>Stringlatitude = String(lat);</br>
+	<br>Stringlongitude = String(lon);</br>
+	<br>String SMS_GPS = "Position:Latitude:"+Latitude+"Longitude:"+Longitude";     // string single for sms</br>
+	<br>SendMessage(SMS_GPS);</br>
+	<br>delay(30000);</br>
+	<br>}</br>
+	<br>}</br>
+		<br>}</br></code>
+		<br>SAVE the file.compile and upload it to arduino.Make sure no pin is connected to arduino while uploading the program.</br>
+		<br>Go to Tools->serial monitor.YoU will see the program running and giving you the values of longitude and latitude.You will also receive the sms of the same.</br>
+		<br>My gps module was snot able to lock the satellite at the place i was working so i changed the program a lil to see if it is working or not.I changed the SMS to be send from lat and lon values to a normal text.</br>
+
+
+	</div>
+   </div>
+    </div>
+
+	<div id="fh5co-started" style="background-image:url(images/img_bg_2.jpg);">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row animate-box">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+					<h2>Want To Write About The Site!</h2>
+					<p>Share your views and ideas to help me improve the site.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<footer id="fh5co-footer" role="contentinfo">
+		<div class="container">
+			<div class="row row-pb-md">
+				<div class="col-md-4 fh5co-widget">
+					<h4>Links</h4>
+					<ul class="fh5co-footer-links">
+						<li><a href="work.html">Work</a></li>
+						<li><a href="about.html">About us</a></li>
+					</ul>
+				</div>
+
+				<div class="col-md-4 col-md-push-1">
+					<h4>Contact Information</h4>
+					<ul class="fh5co-footer-links">
+						<li><a href="mailto:shubhrasanjaygupta@gmail.com">shubhrasanjaygupta@gmail.com</a></li>
+					</ul>
+				</div>
+
+			</div>
+
+	</footer>
+	</div>
+
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+	</div>
+
+	<!-- jQuery -->
+	<script src="js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="js/jquery.waypoints.min.js"></script>
+	<!-- Flexslider -->
+	<script src="js/jquery.flexslider-min.js"></script>
+	<!-- Magnific Popup -->
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script src="js/magnific-popup-options.js"></script>
+	<!-- Main -->
+	<script src="js/main.js"></script>
+
+	</body>
+</html>
